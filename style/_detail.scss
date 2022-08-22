@@ -1,0 +1,235 @@
+.lightbox {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0);
+  .lightbox-content img {
+    max-height: 400px;
+    max-width: 90%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .introl-sp {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0 solid rgba(0, 0, 0, 0.2);
+    outline: 0;
+    .ti-close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+  .introl-sp .img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    img {
+      width: 100%;
+      min-height: 50%;
+      object-fit: cover;
+    }
+  }
+  .text {
+    width: 50%;
+    .brand-name {
+      color: $gray-color;
+      font-size: 1.6rem;
+    }
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    .start {
+      display: flex;
+      align-items: center;
+      margin-bottom: 28px;
+      margin-top: 10px;
+      p {
+        font-size: 1.3rem;
+        color: $gray-color;
+      }
+      i {
+        color: #fea569;
+      }
+    }
+    .detail {
+      color: $gray-color;
+      margin-bottom: 16px;
+    }
+    .size {
+      h4 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+      .choseSize {
+        display: flex;
+        gap: 10px;
+        span {
+          line-height: 0;
+          height: 32px;
+          width: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #ccc;
+          cursor: pointer;
+          color: $gray-color;
+          &.active {
+            color: $blue-color;
+            border: 1px solid $blue-color;
+          }
+        }
+      }
+    }
+    .color {
+      margin: 30px 0;
+      h4 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+      .choseColor {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        span {
+          padding: 10px;
+          border-radius: 100rem;
+          margin: 1px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+          &:nth-child(1) {
+            background-color: #a0959a;
+          }
+          &:nth-child(2) {
+            background-color: #9d0208;
+          }
+          &:nth-child(3) {
+            background-color: #faca4e;
+          }
+          &:nth-child(4) {
+            background-color: #0a0c0c;
+          }
+        }
+      }
+    }
+    .cost {
+      display: flex;
+      align-items: flex-end;
+      margin: 50px 0;
+      del {
+        line-height: 0;
+        font-size: 1.6rem;
+        color: $gray-color;
+        font-weight: 600;
+      }
+      p {
+        font-size: 2rem;
+        line-height: 0;
+        font-weight: 600;
+        color: $blue-color;
+      }
+    }
+    .product-detail-actiont {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      .control {
+        position: relative;
+        border: 1px solid #e3e9ef;
+        padding: 10px 0;
+        div:last-child,
+        div:first-child {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 10px;
+          background-color: #e3e9ef;
+          cursor: pointer;
+          min-height: 103%;
+        }
+        div:last-child {
+          right: 0;
+        }
+        input {
+          padding-left: 50%;
+          width: 100%;
+          border: none;
+        }
+      }
+    }
+    .addCart {
+      display: flex;
+      padding: 10px 10px;
+      background-color: #02010a;
+      color: white;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .i-me {
+      padding: 10px 15px;
+      border: 1px solid $blue-color;
+      line-height: 1.5;
+      color: $blue-color;
+      border-radius: 1px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      &:hover {
+        color: white;
+        background-color: $blue-color;
+      }
+    }
+  }
+  .lightbox-content {
+    max-width: 1140px;
+    min-height: calc(100% - 3.5rem);
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: auto;
+    pointer-events: none;
+    padding: 0 25px;
+  }
+}
+
+@include maxw(970px) {
+  .introl-sp .img{
+    padding: 30px !important;
+  }
+}
+@include maxw(870px) {
+  .introl-sp .img{
+    width: 100%;
+  }
+  .lightbox .introl-sp{
+    flex-direction: column;
+    align-items: center;
+  }
+  .lightbox .text,
+  .lightbox .introl-sp .img{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+
+}

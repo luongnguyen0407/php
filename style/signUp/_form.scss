@@ -1,0 +1,39 @@
+.form {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-sign {
+    padding: 30px;
+    display: flex;
+    background-color: antiquewhite;
+    flex-direction: column;
+    gap: 20px;
+    label {
+      display: block;
+    }
+    input {
+      padding: 5px 10px;
+      width: 400px;
+      border: 1px solid transparent;
+      outline: none;
+      transition: all 0.25s linear;
+      border-radius: 3px;
+      &:focus {
+        border: 1px #6a5af9 solid;
+      }
+    }
+    .btn-submit {
+      background-color: #6a5af9;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  }
+}
+.has-err {
+  color: red;
+}
+.menu-link {
+  text-transform: capitalize;
+}

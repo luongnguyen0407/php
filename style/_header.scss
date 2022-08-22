@@ -1,0 +1,115 @@
+.header {
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+  }
+  .bar {
+    display: none;
+  }
+  .active {
+    position: fixed;
+    transform: translateX(0);
+    transition: all 0.3s linear;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    z-index: 1000;
+  }
+
+  &-logo {
+    width: 200px;
+    object-fit: cover;
+  }
+  .menu-main {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 30px;
+    .menu-item {
+      & a {
+        color: $text-dark;
+        transition: color 0.25s linear;
+        &:hover {
+          color: $text-black;
+        }
+      }
+      &-btn {
+        & a {
+          color: #333;
+        }
+        .dropdown-menu {
+          position: absolute;
+          z-index: 9999999;
+          height: 0;
+          overflow: hidden;
+          background-color: #ffbc06;
+          list-style: none;
+          padding: 0 20px;
+          transition: height 0.25s linear;
+          border-radius: 5px;
+          li {
+            padding: 5px 0;
+          }
+        }
+        .dropdown-item {
+          width: 100%;
+          white-space: nowrap;
+          display: block;
+          transition: color 0.25s linear;
+
+          &:hover {
+            color: #6a5af9;
+          }
+        }
+        .show-child {
+          transition: height 0.25s linear;
+          padding: 20px;
+          height: auto;
+        }
+        .dropdown {
+          position: relative;
+          &-btn {
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+            background-color: #ffbc06;
+            color: #333;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $text-wh;
+  transition: all 0.3s linear;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  z-index: 1000;
+}
+@include maxw(769px) {
+  .menu-main {
+    position: absolute;
+    flex-direction: column;
+    gap: 40px !important;
+    padding: 30px;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    top: 0;
+    left: 0;
+    background-color: $text-wh;
+    width: 50%;
+    height: 100vh;
+    transform: translateX(-100%);
+  }
+  .bar {
+    display: block !important;
+  }
+
+}

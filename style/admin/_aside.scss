@@ -1,0 +1,19 @@
+.aside {
+  .list-menu {
+    padding: 20px;
+    li {
+      padding: 20px 30px;
+    }
+    .active {
+      background-color: white;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    a {
+      color: $text-black;
+      text-transform: capitalize;
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+}
